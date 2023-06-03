@@ -1,0 +1,15 @@
+Transpose Matrix
+
+https://www.algoexpert.io/questions/transpose-matrix
+
+'''
+def transposeMatrix(matrix):
+    lst=[]
+    for i in range(len(matrix[0])):
+        temp=[]
+        for j in range(len(matrix)):
+            temp.append(matrix[j][i])
+        lst.append(temp)
+    return lst
+'''
+
