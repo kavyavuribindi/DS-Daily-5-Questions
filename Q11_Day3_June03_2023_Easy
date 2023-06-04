@@ -1,0 +1,55 @@
+Algoexpert: Best Seat
+
+https://www.algoexpert.io/questions/best-seat
+
+My Soln:
+------------------------------------------------
+def bestSeat(seats):
+    if len(seats)<3:
+        return -1
+    dict={}
+    count=0
+    i=0
+    while(i<len(seats)):
+        if seats[i]==0:
+            dict[i]=0
+            k=i
+            while seats[k]==0:
+                dict[i]+=1
+                k+=1
+            i=k
+        else:
+            i=i+1
+            count+=1
+    
+    print(dict)
+    if(count!=len(seats)):
+        idx=max(dict, key=dict.get)
+        length=(max(dict.values()))
+        if(length%2==0):
+            return idx+(length-1)//2
+        else:
+            return idx+length//2
+    else: 
+        return -1
+
+Algoexpert Soln:
+------------------------------------------------
+
+# O(n) time 0(1) space - where n is the number of seats
+def bestSeat (seats) :
+  bestSeat = - 1
+  maxSpace = 0
+
+  left = 0
+  while left < len (seats):
+    right = left + 1
+    while right < len (seats) and seats[right] == 0:
+      right += 1
+    availableSpace = right - left - 1
+    if availableSpace > maxSpace:
+      bestSeat = (left + right) // 2
+      maxspace = availableSpace
+    left = right
+  return bestSeat
+            
