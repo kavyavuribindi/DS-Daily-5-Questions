@@ -37,6 +37,7 @@ Algoexpert Soln:
 ------------------------------------------------
 
 # O(n) time 0(1) space - where n is the number of seats
+
 def bestSeat (seats) :
   bestSeat = - 1
   maxSpace = 0
