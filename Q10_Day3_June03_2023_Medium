@@ -1,0 +1,30 @@
+Algoexpert : Sweet and Savory
+
+https://www.algoexpert.io/questions/sweet-and-savory
+
+'''
+def sweetAndSavory(dishes, target):
+    dishes.sort()
+    #-5,-3,1,7
+    left=0
+    right=len(dishes)-1
+    mainDiff=float('inf')
+    tempAns=[0,0]
+    if(len(dishes)==0):
+        return tempAns
+    while(dishes[left]<0 and dishes[right]>0):
+        dishSum=dishes[left]+dishes[right]
+        if dishSum ==target:
+            return [dishes[left],dishes[right]]
+        else:
+            diff= target-dishSum
+            if diff>0 and min(diff,mainDiff)==diff:
+                mainDiff=min(diff,mainDiff)
+                tempAns=[dishes[left],dishes[right]]
+        if dishSum<target:
+            left+=1
+        else:
+            right-=1
+    return tempAns        
+    
+'''
