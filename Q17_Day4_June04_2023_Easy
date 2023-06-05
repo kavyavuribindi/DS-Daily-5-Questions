@@ -1,0 +1,24 @@
+Algoexpert : Sorted Squared Array
+
+https://www.algoexpert.io/questions/sorted-squared-array
+
+'''
+def sortedSquaredArray(array):
+    left=0
+    right, i =len(array)-1, len(array)-1
+
+    lst=[ 0 for i in range(len(array))]
+    
+    while(left<right):
+        if(abs(array[left])>=abs(array[right])):
+            lst[i]=array[left]**2
+            left+=1
+        elif(abs(array[left])<abs(array[right])):
+            lst[i]=array[right]**2
+            right-=1
+        i-=1
+    lst[i]=array[left]**2
+    return lst
+ '''
+        
+        
