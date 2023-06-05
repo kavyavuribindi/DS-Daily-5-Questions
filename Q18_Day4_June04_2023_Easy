@@ -1,0 +1,15 @@
+Algoexpert : Tournament Winner
+
+https://www.algoexpert.io/questions/tournament-winner
+
+'''
+def tournamentWinner(competitions, results):
+    dict={}
+    for i in range(len(results)):
+        winningteam=competitions[i][1-results[i]]
+        if winningteam in dict:
+            dict[winningteam]+=3
+        else:
+            dict[winningteam]=3
+    return max(dict, key=dict.get)
+'''
