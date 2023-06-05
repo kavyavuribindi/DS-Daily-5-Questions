@@ -1,0 +1,16 @@
+Algoexpert : Validate Subsequence
+
+https://www.algoexpert.io/questions/validate-subsequence
+
+'''
+def isValidSubsequence(array, sequence):
+    arrayidx=0
+    seqidx=0
+    while(arrayidx<len(array) and seqidx<len(sequence)):
+        if(array[arrayidx]==sequence[seqidx]):
+            seqidx+=1
+            arrayidx+=1
+        else:
+            arrayidx+=1
+    return seqidx==len(sequence)
+'''
