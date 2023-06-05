@@ -1,0 +1,22 @@
+Algoexpert : Generate Document
+
+https://www.algoexpert.io/questions/generate-document
+
+'''
+def generateDocument(characters, document):
+    dic={}
+    for chars in characters:
+        if chars not in dic:
+            dic[chars]=1
+        else:
+            dic[chars]+=1
+
+
+    for letter in document:
+        if letter not in dic or dic[letter]==0:
+            return False    
+        dic[letter]-=1
+                   
+    return True
+            
+'''
