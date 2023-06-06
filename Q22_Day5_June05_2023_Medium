@@ -1,0 +1,22 @@
+Algoexpert : Common Characters
+
+https://www.algoexpert.io/questions/common-characters
+
+'''
+def commonCharacters(strings):
+    
+    dict={}
+    for name in strings:
+        for letter in set(name):
+            if letter in dict:
+                dict[letter]+=1
+            else:
+                dict[letter]=1
+
+    lst=[]
+    for letter in dict:
+        if(dict[letter]==len(strings)):
+            lst.append(letter)
+            
+    return lst
+'''
