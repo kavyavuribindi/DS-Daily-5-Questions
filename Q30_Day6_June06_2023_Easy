@@ -1,0 +1,14 @@
+Algoexpert : Three Number Sum
+
+https://www.algoexpert.io/questions/three-number-sum
+
+'''
+def threeNumberSum(array, targetSum):
+    lst=[]
+    for num1 in array:
+        for num2 in array[array.index(num1)+1:]:
+            if(targetSum-num1-num2) in array[array.index(num2)+1:]:
+                lst.append(sorted([num1,num2,targetSum-num1-num2]))
+    return sorted(lst)
+         
+'''
