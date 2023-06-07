@@ -1,0 +1,20 @@
+Algoexpert : Selection Sort
+
+https://www.algoexpert.io/questions/selection-sort
+
+def selectionSort(array):
+    counter=0
+    
+    while(counter<len(array)):
+        minSoFar=float('inf')
+        for i in range(counter,len(array)):
+            if(array[i]<minSoFar):
+                minSoFar=array[i]
+                minIdx=i
+        swap(counter,minIdx,array)
+        counter+=1
+    return array
+
+def swap(i,j,array):
+    array[i],array[j]=array[j],array[i]
+        
