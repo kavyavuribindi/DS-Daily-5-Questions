@@ -1,0 +1,25 @@
+Algoexpert : Run Length Encoding
+
+https://www.algoexpert.io/questions/run-length-encoding
+
+'''
+def runLengthEncoding(string):
+    lst=[]
+    counter=1
+
+    for i in range(1,len(string)):
+        prev=string[i-1]
+        next=string[i]
+        if(prev != next or counter==9):
+            lst.append(str(counter))
+            lst.append(prev)
+            counter=0
+        counter=counter+1
+
+    lst.append(str(counter))
+    lst.append(string[len(string)-1])
+
+    return ''.join(lst)
+        
+            
+'''
