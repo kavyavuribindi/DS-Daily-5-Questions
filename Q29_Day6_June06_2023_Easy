@@ -1,0 +1,19 @@
+Algoexpert : First Non-Repeating Character
+
+https://www.algoexpert.io/questions/first-non-repeating-character
+
+'''
+def firstNonRepeatingCharacter(string):
+    dic={}
+    for letter in string:
+        if letter not in dic:
+            dic[letter]=1
+        else:
+            dic[letter]+=1
+            
+    for idx in range(len(string)):
+        if(dic[string[idx]])==1:
+            return idx
+            
+    return -1
+'''
