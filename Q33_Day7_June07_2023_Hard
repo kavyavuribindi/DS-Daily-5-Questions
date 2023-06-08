@@ -1,0 +1,21 @@
+2589. Minimum Time to Complete All Tasks
+
+https://leetcode.com/contest/weekly-contest-336/problems/minimum-time-to-complete-all-tasks/
+
+'''
+class Solution:
+    def findMinimumTime(self, tasks: List[List[int]]) -> int:
+        tasks.sort(key=lambda x: x[1])
+        times_used = set()
+        for start, end, duration in tasks:
+            counter = 0
+            for time in times_used:
+                if start <= time <= end:
+                    counter += 1
+            while counter < duration:
+                if end not in times_used:
+                    times_used.add(end)
+                    counter += 1
+                end -= 1
+        return len(times_used)
+'''
