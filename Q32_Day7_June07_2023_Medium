@@ -1,0 +1,16 @@
+2587. Rearrange Array to Maximize Prefix Score
+
+https://leetcode.com/contest/weekly-contest-336/problems/rearrange-array-to-maximize-prefix-score/
+
+'''
+class Solution:
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort(reverse=True)
+        sumSoFar=0
+        counter=0
+        for i in range(len(nums)):
+            sumSoFar+=nums[i]
+            if sumSoFar >0:
+                counter+=1
+        return counter
+'''
