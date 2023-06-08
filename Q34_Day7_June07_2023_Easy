@@ -1,0 +1,25 @@
+2574. Left and Right Sum Differences
+
+https://leetcode.com/contest/weekly-contest-334/problems/left-and-right-sum-differences/
+
+'''
+class Solution:
+    def leftRightDifference(self, nums: List[int]) -> List[int]:
+        
+        lst=[]
+        
+        leftSum=[0]
+        for i in range(len(nums)-1):
+            leftSum.append(nums[i]+leftSum[i])
+        # print(leftSum)
+        
+        rightSum=[0 for _ in range(len(nums))]
+        for j in range(len(nums)-2,-1,-1):
+            rightSum[j]=(nums[j+1]+rightSum[j+1])
+        print(rightSum)
+        
+        for k in range(len(nums)):
+            lst.append(abs(leftSum[k]-rightSum[k]))
+            
+        return lst
+'''
