@@ -1,0 +1,16 @@
+2586. Count the Number of Vowel Strings in Range
+
+https://leetcode.com/contest/weekly-contest-336/problems/count-the-number-of-vowel-strings-in-range/
+
+'''
+class Solution:
+    def vowelStrings(self, words: List[str], left: int, right: int) -> int:
+        set={'a','e','i','o','u'}
+        counter=0
+        
+        while(left<right+1):
+            if words[left][0] in set and words[left][-1] in set:
+                counter+=1
+            left+=1
+        return counter
+'''
