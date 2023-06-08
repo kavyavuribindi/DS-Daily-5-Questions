@@ -1,0 +1,19 @@
+2575. Find the Divisibility Array of a String
+
+https://leetcode.com/contest/weekly-contest-334/problems/find-the-divisibility-array-of-a-string/
+
+'''
+class Solution:
+    def divisibilityArray(self, word: str, m: int) -> List[int]:
+        lst=[]
+        number_considered=0
+        for digit in word:   
+            number_considered=(number_considered*(10) + int(digit))% m 
+            
+            if (number_considered) ==0:
+                lst.append(1)
+            else:
+                lst.append(0)
+        return lst
+  
+'''
