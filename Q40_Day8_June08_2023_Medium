@@ -1,0 +1,19 @@
+Algoexpert : Majority Element
+
+https://www.algoexpert.io/questions/majority-element
+
+'''
+def majorityElement(array):
+    counter=0
+    majorityNum=None
+
+    for num in array:
+        if counter==0:
+            majorityNum=num
+
+        if num==majorityNum:
+            counter+=1
+        else:
+            counter-=1
+    return majorityNum
+'''
