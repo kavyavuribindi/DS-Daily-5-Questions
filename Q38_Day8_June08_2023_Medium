@@ -1,0 +1,13 @@
+Algoexpert : Move Element To End
+
+https://www.algoexpert.io/questions/move-element-to-end
+
+'''
+def moveElementToEnd(array, toMove):
+    temp=0
+    for i in range(len(array)):
+        if(array[i]!=toMove):
+            array[temp],array[i]=array[i],array[temp]
+            temp+=1
+    return array
+'''
