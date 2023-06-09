@@ -1,0 +1,15 @@
+Algoexpert : Zero Sum Subarray
+
+https://www.algoexpert.io/questions/zero-sum-subarray
+
+'''
+def zeroSumSubarray(nums):
+    sumSet=set([0])
+    currentSum=0
+    for num in nums:
+        currentSum+=num
+        if currentSum in sumSet:
+            return True
+        sumSet.add(currentSum)
+    return False
+'''
