@@ -1,0 +1,31 @@
+Algoexpert : Smallest Difference
+
+https://www.algoexpert.io/questions/smallest-difference
+
+'''
+def smallestDifference(arrayOne, arrayTwo):
+    i,j=0,0
+    minDiff=float("inf")
+
+    arrayOne.sort()
+    arrayTwo.sort()
+    
+    while(i<len(arrayOne) and j <len(arrayTwo)):
+        firstNum=arrayOne[i]
+        secondNum=arrayTwo[j]
+        
+        currentDiff=abs(firstNum-secondNum)
+        
+        if(firstNum<secondNum):
+            i+=1
+        elif(firstNum>secondNum):
+            j+=1
+        else:
+            return [firstNum, secondNum]
+
+        minDiff=min(minDiff,currentDiff)
+        if minDiff==currentDiff:
+            leastPair=[firstNum,secondNum]
+            
+    return leastPair   
+'''
