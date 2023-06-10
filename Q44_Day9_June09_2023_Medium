@@ -1,0 +1,31 @@
+Algoexpert : Branch Sums
+
+https://www.algoexpert.io/questions/branch-sums
+
+'''
+# This is the class of the input root. Do not edit it.
+class BinaryTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+
+def branchSums(root):
+    out=[]
+    calculateBranchSum(root,0, out)
+    return out
+
+def calculateBranchSum(tree,runningSum, lst):
+    currentNode=tree
+
+    if currentNode is None:
+        return
+    runningSum+=currentNode.value
+    
+    if(currentNode.left is None and currentNode.right is None):
+        lst.append(runningSum)
+
+    calculateBranchSum(currentNode.left,runningSum, lst)
+    calculateBranchSum(currentNode.right,runningSum, lst)
+'''
