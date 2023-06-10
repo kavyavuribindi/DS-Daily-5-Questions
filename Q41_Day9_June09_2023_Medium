@@ -1,0 +1,23 @@
+Algoexpert : Balanced Brackets
+
+https://www.algoexpert.io/questions/balanced-brackets
+
+'''
+def balancedBrackets(string):
+    openingbrackets={'(','[','{'}
+    closingbrackets={')',']','}'}
+    dict={')':'(', ']':'[','}':'{'}
+    stack=[]
+
+    for bracket in string:
+        if bracket in openingbrackets:
+            stack.append(bracket)
+        elif bracket in closingbrackets:
+            if(len(stack)==0):
+                return False
+            elif(stack[-1]==dict[bracket]):
+                stack.pop()
+            else:
+                return False
+    return len(stack)==0
+'''
