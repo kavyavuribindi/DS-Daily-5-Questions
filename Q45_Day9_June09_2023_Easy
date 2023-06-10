@@ -1,0 +1,13 @@
+Algoexpert : Minimum Waiting Time
+
+https://www.algoexpert.io/questions/minimum-waiting-time
+
+'''
+def minimumWaitingTime(queries):
+    queries.sort()
+    currWaitTime, totalWaitTime=0,0
+    for i in range(len(queries)-1):
+        currWaitTime+=queries[i]
+        totalWaitTime+=currWaitTime
+    return totalWaitTime
+'''
