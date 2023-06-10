@@ -1,0 +1,30 @@
+Algoexpert : Find Closest Value in BST
+
+https://www.algoexpert.io/questions/find-closest-value-in-bst
+
+'''
+def findClosestValueInBst(tree, target):
+    closestValue=float('inf')
+	currentNode=tree
+	
+	while(currentNode is not None):
+        
+		if(abs(currentNode.value-target) < abs(closestValue-target)):
+			closestValue=currentNode.value
+
+		if(target>currentNode.value):
+			currentNode=currentNode.right
+	
+		elif(target<=currentNode.value):
+			currentNode=currentNode.left
+
+	return closestValue
+    
+
+# This is the class of the input tree. Do not edit.
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+'''
