@@ -3,7 +3,7 @@ Algoexpert : Branch Sums
 https://www.algoexpert.io/questions/branch-sums
 
 '''
-# This is the class of the input root. Do not edit it.
+#This is the class of the input root. Do not edit it.
 class BinaryTree:
     def __init__(self, value):
         self.value = value
