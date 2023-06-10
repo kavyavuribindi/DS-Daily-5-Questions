@@ -1,0 +1,31 @@
+Algoexpert : Sunset Views
+
+https://www.algoexpert.io/questions/sunset-views
+
+'''
+def sunsetViews(buildings, direction):
+    
+    if not buildings:
+        return []
+    elif len(buildings)==1:
+        return [0]
+        
+    lst=[]
+    start= 0 if direction=='WEST' else len(buildings)-1
+    end= len(buildings) if direction=='WEST' else -1
+    step= 1 if direction =='WEST' else -1
+    max=0
+       
+    for i in range(start,end,step):
+        if(buildings[i]>max):
+            lst.append(i)
+            max=buildings[i]
+        else:
+            continue
+   
+    return sorted(lst)
+'''        
+        
+            
+                
+              
