@@ -1,0 +1,39 @@
+Algoexpert : Class Photos
+
+https://www.algoexpert.io/questions/class-photos
+
+'''
+def classPhotos(redShirtHeights, blueShirtHeights):
+    redShirtHeights.sort(reverse=True)
+    blueShirtHeights.sort(reverse=True)
+
+    if(redShirtHeights[0]>blueShirtHeights[0]):
+        for i in range(len(redShirtHeights)):
+            if(redShirtHeights[i]<=blueShirtHeights[i]):
+                return False
+        return True
+    else:
+        for i in range(len(redShirtHeights)):
+            if(blueShirtHeights[i]<=redShirtHeights[i]):
+                return False
+        return True
+'''
+
+------------------------------------------------------------
+
+'''
+def classPhotos(redShirtHeights, blueShirtHeights):
+    redShirtHeights.sort(reverse = True)
+    blueShirtHeights.sort(reverse = True)
+
+    if(redShirtHeights[0]>blueShirtHeights[0]):
+        return calculateDifference(redShirtHeights,blueShirtHeights)
+    else:
+        return calculateDifference(blueShirtHeights,redShirtHeights)
+        
+def calculateDifference(backRow, frontRow):
+    for i in range(len(backRow)):
+        if backRow[i]<=frontRow[i]:
+            return False
+    return True
+'''
