@@ -1,0 +1,18 @@
+Algoexpert : Tandem Bicycle
+
+https://www.algoexpert.io/questions/tandem-bicycle
+
+'''
+def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
+    redShirtSpeeds.sort()
+    
+    if fastest is True:
+        blueShirtSpeeds.sort(reverse=True)
+    else:
+        blueShirtSpeeds.sort()
+    
+    countSum=0
+    for i in range(len(redShirtSpeeds)):
+        countSum+=max(redShirtSpeeds[i],blueShirtSpeeds[i])
+    return countSum
+'''
