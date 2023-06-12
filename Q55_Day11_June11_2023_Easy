@@ -1,0 +1,15 @@
+Algoexpert : Number Of Ways To Make Change
+
+https://www.algoexpert.io/questions/number-of-ways-to-make-change
+
+'''
+def numberOfWaysToMakeChange(n, denoms):
+    ways=[0 for _ in range(n+1)]
+    ways[0]=1
+
+    for denomination in denoms:
+        for amount in range(1,n+1):
+            if denomination <= amount:
+                ways[amount]+=ways[amount-denomination]
+    return ways[n]
+'''
