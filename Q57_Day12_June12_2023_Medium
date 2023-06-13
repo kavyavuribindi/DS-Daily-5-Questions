@@ -1,0 +1,25 @@
+2734. Lexicographically Smallest String After Substring Operation
+
+https://leetcode.com/problems/lexicographically-smallest-string-after-substring-operation/description/
+
+'''
+class Solution:
+    def smallestString(self, s: str) -> str:
+        i=0
+        while s[i]=='a' and i<len(s):
+            i+=1
+            if i==len(s):
+                return s[:len(s)-1]+'z'
+        start=i
+        while  i<len(s) :
+            if s[i]!='a' :
+                i+=1
+            else:
+                break
+        end=i
+        slist=list(s)
+        for i in range(start,end):
+            slist[i] = chr(ord(slist[i]) - 1)
+        return "".join(slist)
+                
+'''
