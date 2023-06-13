@@ -1,0 +1,14 @@
+2717. Semi-Ordered Permutation
+
+https://leetcode.com/problems/semi-ordered-permutation/description/
+
+'''
+class Solution:
+    def semiOrderedPermutation(self, nums: List[int]) -> int:
+        minIndex = nums.index(1)
+        maxIndex = nums.index(len(nums))
+        if minIndex < maxIndex:
+            return minIndex + (len(nums)-maxIndex-1) 
+        else:
+            return minIndex + (len(nums)-maxIndex-1) - 1
+'''
