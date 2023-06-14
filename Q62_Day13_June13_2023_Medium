@@ -1,0 +1,39 @@
+2730. Find the Longest Semi-Repetitive Substring
+
+https://leetcode.com/contest/biweekly-contest-106/problems/find-the-longest-semi-repetitive-substring/
+
+'''
+class Solution:
+    def longestSemiRepetitiveSubstring(self, s: str) -> int:
+        def isgood(ss):
+            cnt=0
+            for i in range(1,len(ss)):
+                if ss[i]==ss[i-1]:
+                    cnt+=1
+            return cnt<=1
+        n=len(s)
+        ans=0
+        for l in range(n):
+            for r in range(l,n):
+                if isgood(s[l:r+1]):
+                    ans=max(ans,r-l+1)
+        return ans
+'''
+
+------------------------------------------------------------------------
+
+'''
+class Solution:
+    def longestSemiRepetitiveSubstring(self, s: str) -> int:
+        max_semi_repetitive_substr = 0
+        last_index_repeated = [0]
+        for index in range(1, len(s)):
+            if s[index - 1] == s[index]:
+                last_index_repeated.append(index)
+        last_index_repeated.append(len(s))
+        max_repeat = 0
+        for index in range(2, len(last_index_repeated)):
+            max_repeat = max(last_index_repeated[index] - last_index_repeated[index - 2], max_repeat)
+        return max_repeat if len(last_index_repeated) > 2 else len(s)
+        
+'''
