@@ -1,0 +1,22 @@
+2731. Movement of Robots
+
+https://leetcode.com/contest/biweekly-contest-106/problems/movement-of-robots/
+
+'''
+class Solution:
+    def sumDistance(self, nums: List[int], s: str, d: int) -> int:
+        for ind, direction in enumerate(s):
+            if direction == 'L':
+                nums[ind] -= d
+            elif direction == 'R':
+                nums[ind] += d
+
+        nums.sort()
+        total_sum = 0
+        answer = 0
+        for ind, num in enumerate(nums):
+            answer += num * ind - total_sum
+            total_sum += num
+
+        return answer % (10 ** 9 + 7)
+'''
