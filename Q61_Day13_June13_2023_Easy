@@ -1,0 +1,12 @@
+2729. Check if The Number is Fascinating
+
+https://leetcode.com/contest/biweekly-contest-106/problems/check-if-the-number-is-fascinating/
+
+'''
+class Solution:
+    def isFascinating(self, n: int) -> bool:
+        num=str(n)+str(2*n)+str(3*n)
+        if len(set(num))==len(num) and '0' not in set(num):
+            return True
+        return False
+'''
