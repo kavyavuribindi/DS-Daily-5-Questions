@@ -1,0 +1,32 @@
+2708. Maximum Strength of a Group
+
+https://leetcode.com/contest/biweekly-contest-105/problems/maximum-strength-of-a-group/
+
+'''
+class Solution:
+    def maxStrength(self, nums: List[int]) -> int:
+        if len(nums)==1:
+            return nums[0]
+        
+        nums.sort()
+    
+        totalProd=1
+        left=0
+        right=len(nums)-1
+        counter=0
+        
+        while( left<len(nums) and nums[left]<0):
+            totalProd*=nums[left]
+            left+=1
+            counter+=1
+        if(totalProd <0):
+            totalProd=totalProd/nums[left-1]
+            counter-=1
+            
+        while(right>=0 and nums[right]>0 ):
+            totalProd*=nums[right]
+            right-=1
+            counter+=1
+            
+        return int(totalProd) if counter>0 else 0
+'''
