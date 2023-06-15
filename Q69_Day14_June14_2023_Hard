@@ -1,0 +1,23 @@
+2681. Power of Heroes
+
+https://leetcode.com/contest/biweekly-contest-104/problems/power-of-heroes/
+
+'''
+class Solution:
+    def sumOfPower(self, nums: List[int]) -> int:
+        nums.sort()
+        
+        MOD = 10 ** 9 + 7
+        big_sum = 0
+        prev_mult = 0
+
+        for num in nums:
+            top = (prev_mult + num) * num * num
+            big_sum += top
+            big_sum %= MOD
+            prev_mult = 2 * prev_mult + num
+            prev_mult %= MOD
+            
+
+        return big_sum
+'''
