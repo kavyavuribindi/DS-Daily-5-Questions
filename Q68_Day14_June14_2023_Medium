@@ -1,0 +1,21 @@
+2679. Sum in a Matrix
+
+https://leetcode.com/contest/biweekly-contest-104/problems/sum-in-a-matrix/
+
+'''
+class Solution:
+    def matrixSum(self, nums: List[List[int]]) -> int:
+        maxNum=float('-inf')
+        score=0
+        
+        for row in nums:
+            row.sort(reverse=True)
+            
+        for i in range(len(nums[0])):
+            for j in range(len(nums)):
+                maxNum=max(nums[j][i],maxNum)
+                # print(maxNum)
+            score+=maxNum
+            maxNum=float('-inf')
+        return score
+'''
