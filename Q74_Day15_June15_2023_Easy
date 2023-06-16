@@ -1,0 +1,18 @@
+2639. Find the Width of Columns of a Grid
+
+https://leetcode.com/contest/biweekly-contest-102/problems/find-the-width-of-columns-of-a-grid/
+
+'''
+class Solution:
+    def findColumnWidth(self, grid: List[List[int]]) -> List[int]:
+        
+        lst=[]
+        for j in range(len(grid[0])):
+            max_length=0
+            for i in range(len(grid)):
+                length=len(list(str(grid[i][j])))
+                max_length=max(max_length,length)
+            lst.append(max_length)
+        return lst
+
+'''
