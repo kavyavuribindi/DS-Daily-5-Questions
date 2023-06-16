@@ -1,0 +1,27 @@
+2658. Maximum Number of Fish in a Grid
+
+https://leetcode.com/problems/maximum-number-of-fish-in-a-grid/description/
+
+'''
+class Solution:
+    def findMaxFish(self, grid: List[List[int]]) -> int:
+        rowCount = len(grid)
+        colCount = len(grid[0])
+        ans = 0
+        for i in range(rowCount):
+            for j in range(colCount):
+                if grid[i][j] > 0:
+                    ans = max(ans, dfs(i, j, grid, rowCount, colCount))
+        return ans
+
+def dfs(i,j, grid, rowCount, colCount):
+    f = grid[i][j]
+    grid[i][j] = 0
+    dr = [0, 1, 0, -1, 0]
+    for k in range(4):
+        nRow = i + dr[k]
+        nCol = j + dr[k + 1]
+        if nRow >= 0 and nRow < rowCount and nCol >= 0 and nCol < colCount and grid[nRow][nCol] > 0:
+            f += dfs(nRow, nCol, grid, rowCount, colCount)
+    return f
+'''
