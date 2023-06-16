@@ -1,0 +1,19 @@
+2659. Make Array Empty
+
+https://leetcode.com/problems/make-array-empty/solutions/3514715/greedy-solution-sorting-an-observation/
+
+Soln:
+https://leetcode.com/problems/make-array-empty/solutions/3514715/greedy-solution-sorting-an-observation/
+
+'''
+def countOperationsToEmptyArray(self, nums: List[int]) -> int:
+        nums = [[nums[i], i] for i in range(len(nums))]
+        nums.sort()
+        ans, m = 0, 0
+        for i in range(len(nums)):
+            if i > 0 and nums[i][1] < nums[i-1][1]:
+                ans += len(nums) - m
+                m = i
+        ans += len(nums) - m
+        return ans
+'''
