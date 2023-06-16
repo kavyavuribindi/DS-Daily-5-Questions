@@ -1,0 +1,16 @@
+2640. Find the Score of All Prefixes of an Array
+
+https://leetcode.com/contest/biweekly-contest-102/problems/find-the-score-of-all-prefixes-of-an-array/
+
+'''
+class Solution:
+    def findPrefixScore(self, nums: List[int]) -> List[int]:
+        ans=[]
+        score=0
+        maxSoFar=float('-inf')
+        for i in range(0,len(nums)):
+            maxSoFar=max(maxSoFar, nums[i])
+            score+=nums[i]+maxSoFar
+            ans.append(score)
+        return ans
+'''
