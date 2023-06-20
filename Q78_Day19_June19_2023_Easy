@@ -1,0 +1,15 @@
+2739. Total Distance Traveled
+
+https://leetcode.com/contest/weekly-contest-350/problems/total-distance-traveled/
+
+'''
+class Solution:
+    def distanceTraveled(self, mainTank, additionalTank):
+        distance=0
+        while(mainTank>=5 and additionalTank):
+            mainTank-=4
+            additionalTank-=1
+            distance+=50
+        
+        return distance + 10*mainTank
+'''
