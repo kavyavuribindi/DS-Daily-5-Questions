@@ -1,0 +1,15 @@
+2740. Find the Value of the Partition
+
+https://leetcode.com/contest/weekly-contest-350/problems/find-the-value-of-the-partition/
+
+'''
+class Solution:
+    def findValueOfPartition(self, nums: List[int]) -> int:
+        nums.sort()
+        minDiff=float('inf')
+        for i in range(len(nums)-1):
+            diff=abs(nums[i]-nums[i+1])
+            if diff<minDiff:
+                minDiff=diff
+        return minDiff
+'''
