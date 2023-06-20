@@ -1,0 +1,22 @@
+2521. Distinct Prime Factors of Product of Array
+
+https://leetcode.com/contest/weekly-contest-326/problems/distinct-prime-factors-of-product-of-array/
+
+'''
+class Solution:
+	def distinctPrimeFactors(self, nums: List[int]) -> int:
+
+		result = set()
+		for i in range (len(nums)) :
+			square_root = int(math.sqrt(nums[i]))
+			for divisor in range(2, square_root + 1) :
+				if (nums[i] % divisor == 0) :
+					result.add(divisor)
+					while (nums[i] % divisor == 0) :
+						nums[i] = nums[i] // divisor
+
+			if (nums[i] >= 2) :
+				result.add(nums[i])
+
+		return len(result)
+'''
