@@ -1,0 +1,28 @@
+189. Rotate Array
+
+https://leetcode.com/problems/rotate-array/description/?envType=study-plan-v2&envId=top-interview-150
+
+'''
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        k = k % len(nums)
+        reverse(nums, 0, len(nums) - 1)
+        reverse(nums, 0, k - 1)
+        reverse(nums, k, len(nums) - 1)
+        
+
+def reverse(nums, start, end):
+    while (start < end):
+        nums[start], nums[end] = nums[end], nums[start]
+        start += 1
+        end -= 1
+'''
+
+'''
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        k=k%len(nums)
+        nums.reverse()
+        nums[:k]=reversed(nums[:k])
+        nums[k:len(nums)]=reversed(nums[k:len(nums)])
+'''
